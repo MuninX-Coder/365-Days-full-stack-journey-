@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>seo friendly website</title>
+<style>
+    /* ===============================
+   Modern Red Theme + Animations
+   =============================== */
+
+:root {
+  --red: #e23744;          /* Primary Zomato-like red */
+  --red-light: #ffdadb;    /* Soft red for backgrounds */
+  --dark: #1f1f1f;
+  --gray: #6a6a6a;
+  --max-width: 1150px;
+  --radius: 14px;
+  --transition: 240ms ease;
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, sans-serif;
+  background: #fff;
+  color: var(--dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Center content layout */
+body > * {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 0 1.25rem;
+}
+
+/* ===============================
+   HEADER
+   =============================== */
+
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  z-index: 1000;
+  animation: slideDown 0.6s ease forwards;
+}
+
+header > div:first-child {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--red);
+  letter-spacing: 0.5px;
+  animation: popIn 0.6s ease;
+}
+
+/* Nav */
+header > div:last-child {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+header a {
+  text-decoration: none;
+  color: var(--dark);
+  padding: 0.5rem 0.9rem;
+  font-size: 1rem;
+  font-weight: 600;
+  position: relative;
+  transition: var(--transition);
+}
+
+/* Animated underline */
+header a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 0%;
+  height: 2.5px;
+  background: var(--red);
+  border-radius: 3px;
+  transition: width 220ms ease;
+}
+
+header a:hover::after {
+  width: 100%;
+}
+
+header a:hover {
+  color: var(--red);
+}
+
+/* ===============================
+   MAIN CONTENT
+   =============================== */
+
+main {
+  padding: 2rem 0 3.5rem;
+}
+
+/* Hero text */
+main > div:first-child {
+  font-size: 2rem;
+  font-weight: 700;
+  background: var(--red-light);
+  padding: 1.6rem 1.3rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.3rem;
+  color: var(--red);
+  box-shadow: 0 8px 30px rgba(226, 55, 68, 0.15);
+  animation: fadeUp 0.7s ease forwards;
+}
+
+/* Paragraphs */
+main p {
+  margin-top: 0.3rem;
+  color: var(--gray);
+  font-size: 1rem;
+  animation: fadeUp 1s ease forwards;
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  color: var(--gray);
+  font-size: 0.95rem;
+  border-top: 1px solid #eee;
+  animation: fadeUp 1.2s ease;
+}
+
+/* ===============================
+   ANIMATIONS
+   =============================== */
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-15px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+
+@media (max-width: 650px) {
+  header {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  header > div:last-child {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  main > div:first-child {
+    font-size: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+</style>
+</head>
+<body>
+    <header>
+<div>zomato</div>
+<div>
+    <a href="/home">Home</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+</div>
+    </header>
+    <main>
+<div>
+    order food anytime anywhere
+</div>
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit minus quas reiciendis error minima temporibus itaque quod quisquam repellat, accusamus ipsa obcaecati eum? Officia ratione nobis in suscipit perferendis quaerat et reprehenderit illum non? Commodi numquam voluptate fugit tempora mollitia porro officiis, asperiores id repellendus impedit natus in aperiam expedita.
+</p>
+    </main>
+    <footer>
+copyright zomato all rights reserved
+    </footer>
+</body>
+</html>

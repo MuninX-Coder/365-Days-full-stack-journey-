@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>personal routine</title>
+    <style>
+        /* ===============================
+   Modern Calm Routine Theme
+   =============================== */
+
+:root {
+  --primary: #e03b3b;       /* soft red highlight */
+  --bg: #fff6f6;            /* very soft pink background */
+  --card: #ffffffaa;
+  --dark: #1d1d1d;
+  --gray: #5e5e5e;
+  --radius: 16px;
+  --transition: 260ms ease;
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--dark);
+}
+
+/* ===============================
+   NAVIGATION
+   =============================== */
+
+header {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  padding: 1rem;
+  border-bottom: 1px solid #ffe1e1;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  animation: fadeDown 0.7s ease;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--dark);
+  font-size: 1.05rem;
+  font-weight: 600;
+  position: relative;
+  transition: var(--transition);
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2.5px;
+  background: var(--primary);
+  transition: width 230ms ease;
+  border-radius: 4px;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+/* ===============================
+   MAIN CONTENT
+   =============================== */
+
+main {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 0 1rem;
+}
+
+/* Page heading */
+main h1 {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 2rem;
+  animation: fadeUp 0.7s ease;
+}
+
+/* Routine section cards */
+section {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  animation: fadeUp 0.9s ease forwards;
+}
+
+section h2 {
+  color: var(--primary);
+  font-size: 1.6rem;
+  margin-top: 0;
+}
+
+section ul {
+  list-style: none;
+  padding: 0.3rem 0 0 0;
+}
+
+section li {
+  font-size: 1.07rem;
+  padding: 0.5rem 0;
+  color: var(--gray);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+/* custom bullet */
+section li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 1.4rem;
+  color: var(--primary);
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  color: var(--gray);
+  font-size: 1rem;
+  border-top: 1px solid #ffd3d3;
+  backdrop-filter: blur(10px);
+  margin-top: 3rem;
+  animation: fadeUp 1s ease;
+}
+
+/* ===============================
+   ANIMATIONS
+   =============================== */
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(25px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/about_us">About us</a></li>
+                <li><a href="/routine">Routine</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>My routine</h1>
+        <section>
+            <h2>Morning</h2>
+            <ul>
+                <li>wake up : 5 oclock</li>
+                <li>Meditation 10 min</li>
+                <li>study 3 hours</li>
+            </ul>
+        </section>
+        <section>
+            <h2>evening</h2>
+            <ul>
+                <li>workout 30 min</li>
+                <li>study 3 hours</li>
+                <li>sleep before 9 oclock</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>This routine will be followed upto class 12 only</p>
+    </footer>
+</body>
+
+</html>

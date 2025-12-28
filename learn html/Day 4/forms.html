@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+    <style>
+        /* ---------- ROOT ---------- */
+        :root {
+            --accent1: #6ee7b7;
+            --accent2: #60a5fa;
+            --text: #e6eef8;
+            --muted: rgba(255, 255, 255, 0.7);
+            --transition: 300ms cubic-bezier(.2, .9, .2, 1);
+        }
+
+        /* ---------- PAGE LAYOUT ---------- */
+        body {
+            margin: 0;
+            min-height: 100vh;
+            padding: 40px;
+            font-family: Inter, sans-serif;
+            color: var(--text);
+            background: linear-gradient(120deg, #050919, #020617);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* animated background blobs */
+        body::before,
+        body::after {
+            content: "";
+            position: fixed;
+            width: 90vmax;
+            height: 90vmax;
+            filter: blur(120px);
+            opacity: .35;
+            z-index: -1;
+        }
+
+        body::before {
+            background: radial-gradient(circle, #3b82f6, transparent);
+            top: -20%;
+            left: -20%;
+            animation: blob1 18s infinite alternate ease-in-out;
+        }
+
+        body::after {
+            background: radial-gradient(circle, #14b8a6, transparent);
+            bottom: -20%;
+            right: -20%;
+            animation: blob2 20s infinite alternate ease-in-out;
+        }
+
+        @keyframes blob1 {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes blob2 {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.25);
+            }
+        }
+
+        /* ---------- HEADING ---------- */
+        h1 {
+            margin: 0 0 20px 0;
+            font-size: 28px;
+            text-align: center;
+            color: #fff;
+        }
+
+        /* ---------- FORM CARD ---------- */
+        form {
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(14px);
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        /* ---------- FIELD WRAPPER ---------- */
+        form>div {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            gap: 6px;
+        }
+
+        /* ---------- LABEL (floating) ---------- */
+        label {
+            position: absolute;
+            top: 16px;
+            left: 14px;
+            font-size: 14px;
+            pointer-events: none;
+            opacity: .7;
+            transition: var(--transition);
+        }
+
+        /* ---------- INPUTS ---------- */
+        input,
+        select,
+        textarea {
+            padding: 18px 14px;
+            font-size: 15px;
+            background: rgba(255, 255, 255, 0.08);
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            color: #fff;
+            transition: var(--transition);
+        }
+
+        /* hide placeholder for floating label */
+        input::placeholder,
+        textarea::placeholder {
+            color: transparent;
+        }
+
+        /* FLOAT LABEL WHEN ACTIVE */
+        div:focus-within label {
+            top: -8px;
+            left: 10px;
+            font-size: 12px;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 0 6px;
+            border-radius: 6px;
+            color: var(--accent2);
+        }
+
+        /* FLOAT LABEL WHEN HAS VALUE */
+        input:not(:placeholder-shown)~label,
+        textarea:not(:placeholder-shown)~label,
+        select:not([value=""])~label {
+            top: -8px;
+            left: 10px;
+            font-size: 12px;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 0 6px;
+            border-radius: 6px;
+            color: var(--accent1);
+        }
+
+        /* ---------- UNDERLINE ANIMATION ---------- */
+        form>div::after {
+            content: "";
+            position: absolute;
+            left: 14px;
+            right: 14px;
+            bottom: 8px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent1), var(--accent2));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        form>div:focus-within::after {
+            transform: scaleX(1);
+        }
+
+        /* ---------- CHECKBOX & RADIO ---------- */
+        input[type="checkbox"],
+        input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            margin-right: 6px;
+            appearance: none;
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 6px;
+            display: inline-grid;
+            place-items: center;
+        }
+
+        input[type="radio"] {
+            border-radius: 50%;
+        }
+
+        input[type="checkbox"]::after,
+        input[type="radio"]::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background: linear-gradient(90deg, var(--accent1), var(--accent2));
+            transform: scale(0);
+            transition: var(--transition);
+            border-radius: 4px;
+        }
+
+        input[type="radio"]::after {
+            border-radius: 50%;
+        }
+
+        input:checked::after {
+            transform: scale(1);
+        }
+
+        input[type="radio"]+label,
+        input[type="checkbox"]+label {
+            position: static;
+            margin-left: 4px;
+            background: none;
+            padding: 0;
+            font-size: 14px;
+            opacity: 1;
+        }
+
+        /* ---------- BUTTON ---------- */
+        button {
+            padding: 14px 20px;
+            font-size: 16px;
+            background: linear-gradient(120deg, var(--accent2), var(--accent1));
+            color: #02101c;
+            font-weight: 700;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 6px;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+        }
+
+        button:active {
+            transform: scale(.97);
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 600px) {
+            form {
+                padding: 22px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>forms in html</h1>
+    <!-- form tag -->
+
+    <!-- action = "" - says where this from data will go and submit -->
+    <form action="/submit.php">
+        <div>
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="enter name">
+        </div>
+        <!-- phone  -->
+        <div>
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" placeholder="enter phone">
+        </div>
+        <!-- email  -->
+        <div>
+            <label for="email">email</label>
+            <input id="email" type="email" placeholder="enter email" required>
+        </div>
+        <!-- password  -->
+        <div>
+            <label for="password">password</label>
+            <input id="password" type="password" placeholder="enter password" required>
+        </div>
+        <!-- date  -->
+        <div>
+            <label for="dob">Date of birth</label>
+            <input id="dob" type="date" placeholder="enter date" required>
+        </div>
+
+        <!-- select  -->
+        <div>
+            <label for="gender">Gender</label>
+            <select name="gender" id="gender" required>
+                <option value="" disabled selected>select gender</option>
+                <option value="male">Male</option>
+                <option value="female">female</option>
+                <option value="other">other</option>
+            </select>
+        </div>
+        <!-- radio  -->
+        <div>
+            <p>subscription plan</p>
+            <input type="radio" id="basic" name="subscription" value="basic">
+            <label for="basic">Basic</label>
+
+            <input type="radio" id="premium" name="subscription" value="premium">
+            <label for="premium">premium</label>
+
+            <input type="radio" id="vip" name="subscription" value="vip">
+            <label for="vip">vip</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="terms" required>
+            <label for="terms">I agreee to the terms and conditions</label>
+        </div>
+
+        <div>
+            <label for="comments">Comments</label>
+            <textarea name="text" id="comments" placeholder="enter your comments" rows="4"></textarea>
+        </div>
+
+        <div>
+            <button type="submit">submit</button>
+        </div>
+    </form>
+</body>
+
+</html>

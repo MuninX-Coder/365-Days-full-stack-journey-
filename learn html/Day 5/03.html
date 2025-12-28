@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form - travels book</title>
+ <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body with ultra-dynamic animated gradient background */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: #0f0c29;
+    position: relative;
+}
+
+/* Multiple layered background gradients for smooth animation */
+body::before,
+body::after,
+body div.bg-layer1,
+body div.bg-layer2 {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    border-radius: 50%;
+    filter: blur(150px);
+    opacity: 0.15;
+    animation: floatX 40s linear infinite;
+}
+
+body::before { background: radial-gradient(circle at center, #ff0080, #7928ca); top:-50%; left:-50%; animation-delay: 0s; }
+body::after { background: radial-gradient(circle at center, #00fff7, #ff0080); bottom:-50%; right:-50%; animation-delay: 10s; }
+body .bg-layer1 { background: radial-gradient(circle at center, #ff9a9e, #fad0c4); top:-40%; left:-60%; animation-delay: 5s; }
+body .bg-layer2 { background: radial-gradient(circle at center, #89f7fe, #66a6ff); bottom:-40%; right:-60%; animation-delay: 15s; }
+
+@keyframes floatX {
+    0% { transform: translate(0,0) rotate(0deg); }
+    50% { transform: translate(50px,-50px) rotate(180deg); }
+    100% { transform: translate(0,0) rotate(360deg); }
+}
+
+/* Glass form */
+form {
+    position: relative;
+    z-index: 2;
+    width: 450px;
+    padding: 50px 45px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 35px;
+    backdrop-filter: blur(25px) saturate(200%);
+    box-shadow: 0 25px 70px rgba(0,0,0,0.6);
+    border: 2px solid rgba(255,255,255,0.1);
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 2s ease forwards;
+    overflow: hidden;
+}
+
+/* Fade-in for form */
+@keyframes fadeIn { 0% { opacity: 0; transform: translateY(-60px); } 100% { opacity: 1; transform: translateY(0); } }
+
+/* Input container */
+form div { position: relative; margin-bottom: 30px; }
+
+/* Inputs */
+form input,
+form textarea {
+    width: 100%;
+    padding: 18px 20px;
+    font-size: 16px;
+    border-radius: 22px;
+    border: 2px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+    outline: none;
+    transition: all 0.5s ease;
+    position: relative;
+    animation: pulseSoft 5s ease infinite alternate;
+}
+
+/* Floating label */
+form label {
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    color: rgba(255,255,255,0.6);
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* Active floating label */
+form input:focus + label,
+form input:not(:placeholder-shown) + label,
+form textarea:focus + label,
+form textarea:not(:placeholder-shown) + label {
+    top: -12px;
+    left: 16px;
+    font-size: 12px;
+    color: #00fff7;
+    text-shadow: 0 0 10px #00fff7;
+}
+
+/* Input ripple/glow */
+form input:focus,
+form textarea:focus {
+    border: 2px solid #00fff7;
+    box-shadow: 0 0 35px rgba(0,255,247,0.7), 0 0 70px rgba(0,255,247,0.3) inset;
+    animation: pulseGlow 1.5s ease infinite alternate;
+}
+
+@keyframes pulseSoft { 0% { transform: translateY(0px); } 50% { transform: translateY(-2px); } 100% { transform: translateY(0px); } }
+@keyframes pulseGlow { 0% { box-shadow: 0 0 25px rgba(0,255,247,0.4), 0 0 50px rgba(0,255,247,0.1) inset; } 100% { box-shadow: 0 0 50px rgba(0,255,247,0.7), 0 0 70px rgba(0,255,247,0.3) inset; } }
+
+/* Textarea */
+form textarea { min-height: 120px; resize: vertical; }
+
+/* Submit button */
+form button {
+    padding: 18px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(270deg, #ff0080, #7928ca, #00fff7, #ff0080);
+    background-size: 800% 800%;
+    animation: gradientShift 10s ease infinite;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 80px rgba(0,0,0,0.6);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Button hover liquid effect */
+form button::before {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 100%;
+    background: rgba(255,255,255,0.25);
+    top: 0;
+    left: -120%;
+    transform: skewX(-20deg);
+    transition: all 0.5s ease;
+}
+
+form button:hover::before { left: 120%; }
+form button:hover { transform: translateY(-6px) scale(1.06); box-shadow: 0 30px 90px rgba(0,0,0,0.8); }
+
+/* Hide placeholder */
+input::placeholder, textarea::placeholder { color: transparent; }
+
+ </style>
+</head>
+<body>
+    <form action="">
+        <div>
+            <label for="name" >Name</label>
+            <input type="text" id="name" placeholder="enter your name">
+        </div>
+       <div>
+        <label for="age">age</label>
+        <input type="number" name="age" id="age" placeholder="enter yoour age">
+       </div>
+       <div>
+        <label for="phone_number">phone number</label>
+        <input type="number" id="phone_number" placeholder="enter your phone number">
+       </div>
+       <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="enter your email">
+    
+       </div>
+       <div>
+        <textarea name="address" id="address">your address</textarea>
+       </div>
+       <div>
+        <button type="button">submit</button>
+       </div>
+    </form>
+</body>
+</html>
