@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media query</title>
+    <style>
+        .box {
+            background-color: lightgreen;
+            height: 400px;
+            width: 400px;
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+
+        }
+
+        @media (min-width:300px)  and (max-width:500px) {
+            .box {
+                background-color: lightgray;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- media query - used to make our website responsive for all the different different disaply size -->
+
+    <div class="box">
+        Hello Munin
+    </div>
+
+    <!-- min-width 500px - agar device ka width 500px sai uper geyai tab yeh config add karo
+
+    max-width 500px - agar device ka width 500px sai neche geyai tab yeh config add karo -->
+</body>
+
+</html>

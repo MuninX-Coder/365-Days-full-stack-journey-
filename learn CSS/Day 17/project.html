@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project</title>
+    <style>
+        .container {
+            background-color: lightgray;
+            width: 100%;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .box {
+            background-color: lightgreen;
+            width: 100px;
+            height: 100px;
+            padding: 3px;
+            margin: 3px;
+            border: 1px solid black;
+
+        }
+
+        @media (min-width:640px) {
+            .container {
+                flex-direction: column;
+               align-items: center;
+            }
+
+            .box1 {
+                background-color: pink;
+            }
+
+            .box2 {
+                background-color: orange;
+            }
+
+            .box3 {
+                background-color: green;
+            }
+
+            .box4 {
+                background-color: yellow;
+            }
+
+            .box5 {
+                background-color: red;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- a boxes that shape its area and color when we reach a certain disaply size -->
+
+    <div class="container">
+        <div class="box box1">Box 1</div>
+        <div class="box box2">Box 2</div>
+        <div class="box box3">Box 3</div>
+        <div class="box box4">Box 4</div>
+        <div class="box box5">Box 5</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: lightgrey;
+  box-sizing: border-box; /* by using this our content dimension will remain same even if we add margin padding etc, its just shirnk the content */
+  width: 300px;
+  height: 300px;
+}
+
+/* div{
+    border: 1px solid red;
+    width: 300px;
+    height: 300px;
+    margin: 25px;
+    padding: 50px;
+} */
+
+.box{
+width: 300px;
+height: 300px;
+border: 1px solid black;
+}
+
+span{
+    border: 2px solid black;
+}

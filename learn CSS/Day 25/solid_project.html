@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion store</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 1rem;
+        }
+
+        .header {
+            background-color: rgb(136, 136, 217);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 80px;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+
+        }
+
+        .images_of_product {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            padding: 5rem;
+        }
+
+        .product_img img {
+            height: 100px;
+            width: 100px;
+        }
+
+        .product_name a {
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: black;
+
+        }
+
+        .product_name a:hover {
+            color: rgb(107, 107, 246);
+        }
+
+        .background_image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lightgrey;
+
+        }
+
+        .backimgdiv {
+            height: 70vh;
+            background-color: lightgrey;
+        }
+
+        .background_image img {
+            width: 90vw;
+            height: 60vh;
+            margin-top: 30px;
+        }
+
+        .table_data {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: lightgrey;
+
+        }
+
+        .data_of_table {}
+
+        table {
+            width: 90vw;
+            margin: auto;
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 2rem;
+            height: 30vh;
+
+        }
+
+        .head_of_table {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            background-color: rgb(85, 85, 178);
+            height: 7vh;
+            border: inherit;
+        }
+
+        tr {
+            border-bottom: 1px solid #909090;
+        }
+
+        td {
+            border: 1px solid black;
+        }
+        .some_info{
+            margin: 29px;
+        }
+        footer{
+             background-color:black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 80px;
+        }
+
+        h1{
+            margin: 5px;
+            padding: 5px;
+        }
+        h3{
+            margin: 5px;
+            padding: 5px;
+        }
+        p{
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>FASHIION STORE</h1>
+        </div>
+
+        <div class="images_of_product">
+            <div class="img_1">
+                <div class="product_img">
+                    <img src="pants.jpeg" alt="">
+                </div>
+                <div class="product_name">
+                    <a href="#">Pants</a>
+                </div>
+            </div>
+            <div class="img_1">
+                <div class="product_img">
+                    <img src="shirts.jpeg" alt="">
+                </div>
+                <div class="product_name">
+                    <a href="#">Shirt</a>
+                </div>
+            </div>
+            <div class="img_1">
+                <div class="product_img">
+                    <img src="perfume.jpeg" alt="">
+                </div>
+                <div class="product_name">
+                    <a href="#">Perfume</a>
+                </div>
+            </div>
+            <div class="img_1">
+                <div class="product_img">
+                    <img src="shoes.jpeg" alt="">
+                </div>
+                <div class="product_name">
+                    <a href="#">shoes</a>
+                </div>
+            </div>
+            <div class="img_1">
+                <div class="product_img">
+                    <img src="sunglasses.jpeg" alt="">
+                </div>
+                <div class="product_name">
+                    <a href="#">sunglasses</a>
+                </div>
+            </div>
+            <div class="img_1">
+                <div class="product_img">
+                    <img src="tshirt.jpeg" alt="">
+                </div>
+                <div class="product_name">
+                    <a href="#">T-shirt</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="background_image">
+            <div class="backimgdiv">
+                <img src="shopingtime.jpeg" alt="">
+            </div>
+        </div>
+
+        <div class="table_data">
+            <div class="table_data_header">
+                <h1>OUR UPCOMING SALES</h1>
+            </div>
+
+            <div class="data_of_table">
+                <table>
+                    <thead class="head_of_table">
+                        <tr>
+                            <th>Festival</th>
+                            <th>Discount</th>
+                            <th>Starting Date</th>
+                            <th>Ending Date</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>Independence Day</td>
+                        <td> 40%</td>
+                        <td>10 August</td>
+                        <td> 18 August</td>
+                    </tr>
+                    <tr>
+                        <td>Diwali</td>
+                        <td> 60%</td>
+                        <td>10 November</td>
+                        <td> 21 November</td>
+                    </tr>
+                    <tr>
+                        <td>Christmas</td>
+                        <td> 50%</td>
+                        <td> 20 December</td>
+                        <td> 26 December</td>
+                    </tr>
+                    <tr>
+                        <td>New Year</td>
+                        <td> 75%</td>
+                        <td>30 December</td>
+                        <td> 6 January</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="some_info">
+                <h1>Fashion Store: The One-stop Fashion Destination
+                </h1>
+                <p>Stepping out and finding a perfect fashion choice is difficult? Why worry when you have your own
+                    Fashion Store at home where you can browse through thousands of choices and you can order clothes
+                    according to your liking. Don't worry if you don't like the item after you receive it, you can
+                    always consider the option for exchanging your item or even you can return your item and you will
+                    get the full amount back. Isn't that amazing? Start searching for your desired clothes and see it
+                    yourself. Once you are done with your first shopping, we are very sure that you will continue that
+                    in future as well and we will try our best to give you more and more choices so that you can have a
+                    variety of clothes to choose from and so you can find one which suits you the best.
+                </p>
+
+                <p>What makes us Great? Well few things are listed below:
+
+                </p>
+
+                <h3>
+                    Festival Sales
+                </h3>
+
+                <p>We keep coming with different sales on our Indian Festivals where we offer huge discounts on your
+                    favorite clothes. If you want to get the notifications of all our future sales then you can
+                    subscribe to us and we will make sure that you will not miss any offer in future so that you can get
+                    your favorite cloth at the best possible price.
+
+                </p>
+
+                <h3>Some of our favorite sales are listed below:</h3>
+                <ul>
+                    <li>Independence Day Sale</li>
+                    <li>Diwali Sale</li>
+                    <li>Christmas Sale</li>
+                    <li>New Year Sale</li>
+                </ul>
+
+                <h3>Payment Options</h3>
+                <p>We support a large variety of payment options so that you won't miss a cloth due to unavailability of
+                    any payment option. You can use a debit card or your credit card to make the payment. Also, you can
+                    directly use your UPI ID to make the payment. We also provide EMI options if you think you can not
+                    afford a complete amount at once. Other than that, you can directly make your payment through your
+                    bank details and even if you are not sure or you are in doubt then you can choose the Cash option
+                    where you can pay the amount in cash to our partner who will be delivering your cloth at your
+                    doorstep.</p>
+
+                <footer>
+                    <p>© 2012-2023 FashionStore.com</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

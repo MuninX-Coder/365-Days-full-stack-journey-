@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Dashboard Project</title>
+    <style>
+        main{
+            margin: 0;
+            padding: 0;
+            
+        }
+        .dashboard-container{
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .main-area{
+            display: flex;
+            flex-grow: 1;
+        }
+        .sidebar{
+            flex-basis: 200px;
+            flex-shrink: 0;
+        }
+        .content-area{
+            flex-grow: 1;
+        }
+        .card-grid{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .card{
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 250px;
+        }
+        .card-large{
+            flex-basis: 400px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <header class="header">
+            <h1>Dashboard</h1>
+            <nav class="user-menu">
+                <p>Welcome, User!</p>
+            </nav>
+        </header>
+
+        <div class="main-area">
+
+            <aside class="sidebar">
+                <h2>Navigation</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Analytics</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Profile</a></li>
+                </ul>
+            </aside>
+
+            <main class="content-area">
+                <h3>Key Metrics Overview</h3>
+
+                <div class="card-grid">
+                    <div class="card card-large">
+                        <h4>Sales Report</h4>
+                        <p>Total Revenue: $85,000</p>
+                    </div>
+                    <div class="card card-small">
+                        <h4>New Users</h4>
+                        <p>345 today</p>
+                    </div>
+                    <div class="card card-small">
+                        <h4>Visits</h4>
+                        <p>12,400</p>
+                    </div>
+                    <div class="card card-large">
+                        <h4>Server Load</h4>
+                        <p>Current Load: 68%</p>
+                    </div>
+                    <div class="card card-large">
+                        <h4>Storage Used</h4>
+                        <p>8.2 TB</p>
+                    </div>
+                    <div class="card card-small">
+                        <h4>Errors</h4>
+                        <p>2 minor issues</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

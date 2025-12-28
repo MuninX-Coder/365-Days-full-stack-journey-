@@ -1,0 +1,19 @@
+* {
+  padding: 0;
+  margin: 0;
+  background-color: lightgray;
+}
+
+nav {
+  position: sticky;
+  background-color: lightpink;
+}
+
+.hero{
+    position:relative;
+}
+.chat-box{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}

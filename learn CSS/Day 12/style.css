@@ -1,0 +1,22 @@
+span{
+    width: 800px;
+    height: 400px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    background-color: lightgrey;
+    display: block;
+}
+
+div{
+    display: inline;
+    border: 1px solid black;
+}
+.div{
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    height: 100px;
+    width: 150px;
+    background-color: lightpink;
+}

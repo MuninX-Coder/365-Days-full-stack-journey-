@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card </title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background: #334d50;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #cbcaa5, #334d50);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #cbcaa5, #334d50);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+
+        }
+
+        .leftbox {
+            height: 45%;
+            width: 45%;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            background: #bdc3c7;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #2c3e50, #bdc3c7);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+
+        .rightbox {
+            height: 45%;
+            width: 45%;
+            border: 1px solid black;
+
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .leftbox .heading {
+            font-size: 2rem;
+            font-weight: bolder;
+        }
+
+        .leftbox .para {
+            font-size: 1.5rem;
+            padding: 10px;
+        }
+
+        .rightbox img {
+            background-image: url(HD\ wallpaper_\ Batman\ logo\,\ blackboard\,\ backgrounds\,\ textured\,\ symbol\,\ abstract.jpg);
+            width: 100%;
+            height: 100%;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+
+        .categorybox {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 100px;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            transition: all 0.5s ease;
+            border: 1px solid black;
+            width: 100px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            
+        }
+
+        .box:hover{
+            transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0,255,255,0.5);
+        }
+
+        .box .para1 {
+            font-size: large;
+            font-weight: bold;
+        }
+
+        .box .para2 {
+            font-size: medium;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="leftbox">
+            <div class="heading">
+                <h2>Get insight that help your business grow</h2>
+            </div>
+            <div class="para">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat provident autem, nulla laboriosam
+                    animi rerum optio accusantium culpa tempora magnam.</p>
+            </div>
+            <div class="categorybox">
+                <div class="box">
+                    <div class="para1">
+                        <p>10k</p>
+                    </div>
+                    <div class="para2">
+                        <p>comments</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="para1">
+                        <p>214</p>
+                    </div>
+                    <div class="para2">
+                        <p>paid users</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="para1">
+                        <p>12M+</p>
+                    </div>
+                    <div class="para2">
+                        <p>views</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rightbox">
+            <img src="HD wallpaper_ Batman logo, blackboard, backgrounds, textured, symbol, abstract.jpg" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

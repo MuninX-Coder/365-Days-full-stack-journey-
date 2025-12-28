@@ -1,0 +1,34 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: lightgrey;
+}
+
+img{
+    margin: 10px;
+}
+
+
+div{
+    border: 1px solid black;
+   
+}
+
+.img1{
+
+}
+
+.img2{
+    position: relative;  /*  if we give postion relative then we can change the position of the element, top, left, right, bottom */
+top: 100px;
+left: 100px;
+}
+
+.img3{
+
+}
+
+.img4{
+
+}

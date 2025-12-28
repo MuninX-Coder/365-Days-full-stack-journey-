@@ -1,0 +1,26 @@
+/* selectors */
+/* - is a way thorugh which we can target any html element and put styling on it  */
+
+
+/* element selector  */
+h1{
+    background-color: green;
+}
+
+
+/* id selector - must use # */
+#giving_id{
+background-color: pink;
+}
+
+/* class selector - must use . */
+.para{
+    background-color: yellow;
+}
+
+
+/* group selector using ,   */
+p,article{
+    width: 500px;
+    background-color: aqua;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouning Ball</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 50vh;
+            background-color: lightgrey;
+            border: 2px solid black;
+            margin: 10px;
+            padding: 3px;
+
+        }
+
+        .bouncing {
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: orange;
+            border: 1px solid black;
+            position: relative;
+
+            animation: Bouncing 5s ease-in 0s infinite alternate-reverse none;
+
+
+        }
+
+        @keyframes Bouncing {
+            0% {
+                top: 0%;
+                left: 0%;
+            }
+
+            20% {
+                top: 80%;
+                left: 20%;
+            }
+
+            40% {
+                left: 40%;
+                top: 0%;
+                right: 20%;
+            }
+
+            60% {
+                right: 40%;
+                top: 80%;
+                left: 60%;
+            }
+
+            80% {
+                top: 0%;
+                right: 60%;
+                
+            }
+
+            100% {
+                top: 80%;
+                left: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bouncing"></div>
+    </div>
+</body>
+
+</html>

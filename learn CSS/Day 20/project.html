@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            height: 100vh;
+            width: 100vw;
+            background-color: beige;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product {
+            height: 400px;
+            width: 400px;
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+            background-color: lightgreen;
+
+          transition: all 2s ease-in;
+
+         
+
+        }
+
+        img{
+            height: 200px;
+            width: 200px;
+            border: 1px solid black;
+            position: relative;
+            left: 25%;
+             transition: all 2s ease-in;
+
+
+            
+        }
+        button{
+             transition: all 2s ease-in;
+        }
+        h1{
+            background-color: lightgrey;
+            
+        }
+
+        .product:hover{
+            transform: translateY(-20px);
+        }
+
+        img:hover{
+            transform: scale(1.1);
+            transform: rotate(360deg);
+            border-radius: 100px;
+        }
+
+        button:hover{
+            transform: skew(10deg);
+            border-radius: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="product">
+            <img src="profile pic .webp" alt="product">
+            <h1>Munin</h1>
+            <h2>price : infinite $</h2>
+            <button type="button">Add to chart</button>
+
+        </div>
+    </div>
+</body>
+
+</html>

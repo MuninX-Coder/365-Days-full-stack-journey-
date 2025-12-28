@@ -1,0 +1,16 @@
+h1{
+    background-color: grey;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: larger;
+    font-weight: 400;
+    font-style: inherit;
+    font-display: block;
+    font-variant: small-caps;
+}
+
+p{
+color: rgb(142, 23, 23);
+font-size: larger;
+font-family: 'Times New Roman', Times, serif;
+font-style: normal;
+}

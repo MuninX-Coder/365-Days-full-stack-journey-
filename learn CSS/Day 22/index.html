@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cards in css</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background: #AA076B;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #61045F, #AA076B);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #61045F, #AA076B);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card{
+            width: 360px;
+            height: 450px;
+            background-color: white;
+            border-radius: 20px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        .card img{
+            height: 43%;
+            margin: 10px;
+            border-radius: 20px;
+        }
+        .card h2{
+            
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 5px;
+        }
+        .card p{
+            font-size: 1.1em;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+<img src="HD wallpaper_ Batman logo, blackboard, backgrounds, textured, symbol, abstract.jpg" alt="">
+<h2>Improve your front end skills by developing projects</h2>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde nihil vero dicta culpa dolores incidunt sit vel voluptas dolore illum.</p>
+        </div>
+    </div>
+</body>
+
+</html>
