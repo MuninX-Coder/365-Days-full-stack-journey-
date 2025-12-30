@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  background: #642b73; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #c6426e,
+    #642b73
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #c6426e,
+    #642b73
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+   background: #7f00ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #e100ff,
+    #7f00ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #e100ff,
+    #7f00ff
+  ); /
+}
+.header h1 {
+  margin-left: 30px;
+  font-size: 35px;
+}
+
+.mylinks {
+  display: flex;
+  width: 65%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mylinks a {
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  display: inline-block;
+}
+
+a:after {
+  content: "";
+  width: 0px;
+  height: 2px;
+  display: block;
+  background: black;
+  transition: 300ms;
+}
+
+a:hover:after {
+  width: 100%;
+}
+
+
+.card{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+margin-top: 40px;
+
+  
+}
+
+.card img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+overflow: hidden;
+}
